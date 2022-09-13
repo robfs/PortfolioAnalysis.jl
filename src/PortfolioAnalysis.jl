@@ -1,5 +1,8 @@
 module PortfolioAnalysis
 
-# Write your package code here.
+include("Currencies.jl")
+using .Currencies
+
+export Currency, CurrencyException, currency, iso, name, unit
 
 end
