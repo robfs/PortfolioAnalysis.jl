@@ -214,5 +214,7 @@ unit(c::Currency)::UInt = Symbol(c) |> unit
 
 Base.convert(::Type{Currency}, x::Symbol) = currency(x)
 Base.convert(::Type{Currency}, x::AbstractString) = currency(x)
+Base.convert(::Type{Symbol}, x::Currency) = iso(x)
+Base.convert(::Type{T}, x::Currency) where {T<:AbstractString} = iso(x) |> String
 
 end # module
