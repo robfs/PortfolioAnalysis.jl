@@ -212,4 +212,7 @@ iso(c::Currency)::Symbol = Symbol(c) |> iso
 name(c::Currency)::String = Symbol(c) |> name
 unit(c::Currency)::UInt = Symbol(c) |> unit
 
+Base.convert(::Type{Currency}, x::Symbol) = currency(x)
+Base.convert(::Type{Currency}, x::AbstractString) = currency(x)
+
 end # module
