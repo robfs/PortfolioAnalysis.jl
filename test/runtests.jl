@@ -96,4 +96,48 @@ using Test
             end
         end
     end
+
+    @testset "Securities.jl" begin
+        @testset "Cash securities" begin
+            currencies = (
+                (:USD, "US Dollar"),
+                (:EUR, "Euro"),
+                (:JPY, "Yen"),
+                (:JOD, "Jordanian Dinar"),
+                (:CNY, "Yuan Renminbi"),
+                ("USD", "US Dollar"),
+                ("EUR", "Euro"),
+                ("JPY", "Yen"),
+                ("JOD", "Jordanian Dinar"),
+                ("CNY", "Yuan Renminbi"),
+            )
+            for (iso, name) in currencies
+                security = CashSecurity(iso)
+                @test securityid(security) == Symbol(iso)
+                @test securityname(security) == name
+                @test securitycountry(security) == "Cash"
+                @test subindustrynum(security) == 0
+                @test industrynum(security) == 0
+                @test industrygroupnum(security) == 0
+                @test sectornum(security) == 0
+            end
+        end
+
+        @testset "Common Equities" begin
+            equities = (
+                ("AAPL", "Apple Inc.", "US", "USD", 45202030),
+            )
+            for (s, n, c, cu, g) in equities
+                security = CommonEquitySecurity(s, n, c, cu, g)
+                @test securityid(security) == s
+                @test securityname(security) == n
+                @test securitycountry(security) == country(c)
+                @test securitycurrency(security) == currency(cu)
+                @test subindustrynum(security) == g
+                @test industrynum(security) == g ÷ 100
+                @test industrygroupnum(security) == g ÷ 10000
+                @test sectornum(security) == g ÷ 1000000
+            end
+        end
+    end
 end
