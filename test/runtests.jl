@@ -41,4 +41,59 @@ using Test
             end
         end
     end
+
+    @testset "Countries.jl" begin
+        countries = country.([:US, :PH, :HK, :SG])
+        names = [
+            "United States of America",
+            "Philippines",
+            "China, Hong Kong Special Administrative Region",
+            "Singapore",
+        ]
+        codes = [840, 608, 344, 702]
+        capitals = ["Washington", "Manila", "Hong Kong", "Singapore"]
+        continents = ["NA", "AS", "AS", "AS"]
+        isdevelopings = [false, true, true, true]
+        regions = ["Americas", "Asia", "Asia", "Asia"]
+        subregions =
+            ["Northern America", "South-eastern Asia", "Eastern Asia", "South-eastern Asia"]
+
+        @testset "Basic countries" begin
+            for (c, nm, cd, cp, ct, dv, rg, sr) in zip(
+                countries,
+                names,
+                codes,
+                capitals,
+                continents,
+                isdevelopings,
+                regions,
+                subregions,
+            )
+                @test countryname(c) == nm
+                @test countrycode(c) == cd
+                @test capital(c) == cp
+                @test continent(c) == ct
+                @test isdeveloping(c) == dv
+                @test region(c) == rg
+                @test subregion(c) == sr
+            end
+        end
+        @testset "Validation" begin
+            @test length(PortfolioAnalysis.Countries.allpairs()) >= 155
+            for (s, (ct, n, c, currs, d, cap, cont, isd, reg, sreg)) in
+                PortfolioAnalysis.Countries.allpairs()
+                cntry = Country(s)
+                @test countrysymbol(ct) == s
+                @test countryname(ct) == n
+                @test c > 0
+                @test all(currency(x) <: Currency for x in currs)
+                @test dial(ct) == d
+                @test capital(ct) == cap
+                @test continent(ct) == cont
+                @test isdeveloping(ct) == isd
+                @test region(ct) == reg
+                @test subregion(ct) == sreg
+            end
+        end
+    end
 end
