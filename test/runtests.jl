@@ -3,16 +3,18 @@ using Test
 
 @testset "PortfolioAnalysis.jl" begin
     @testset "Currencies.jl" begin
-        currencies = ((:USD, 2, 840, "US Dollar"),
-                      (:EUR, 2, 978, "Euro"),
-                      (:JPY, 0, 392, "Yen"),
-                      (:JOD, 3, 400, "Jordanian Dinar"),
-                      (:CNY, 2, 156, "Yuan Renminbi"),
-                      ("USD", 2, 840, "US Dollar"),
-                      ("EUR", 2, 978, "Euro"),
-                      ("JPY", 0, 392, "Yen"),
-                      ("JOD", 3, 400, "Jordanian Dinar"),
-                      ("CNY", 2, 156, "Yuan Renminbi"))
+        currencies = (
+            (:USD, 2, 840, "US Dollar"),
+            (:EUR, 2, 978, "Euro"),
+            (:JPY, 0, 392, "Yen"),
+            (:JOD, 3, 400, "Jordanian Dinar"),
+            (:CNY, 2, 156, "Yuan Renminbi"),
+            ("USD", 2, 840, "US Dollar"),
+            ("EUR", 2, 978, "Euro"),
+            ("JPY", 0, 392, "Yen"),
+            ("JOD", 3, 400, "Jordanian Dinar"),
+            ("CNY", 2, 156, "Yuan Renminbi"),
+        )
 
         # This just makes sure that the data was loaded and at least some basic values are set as expected
         @testset "Basic currencies" begin
@@ -29,7 +31,7 @@ using Test
         # This makes sure that the values are within expected ranges
         @testset "Validation" begin
             @test length(PortfolioAnalysis.Currencies.allpairs()) >= 155
-            for (s, (ct,u,c,n)) in PortfolioAnalysis.Currencies.allpairs()
+            for (s, (ct, u, c, n)) in PortfolioAnalysis.Currencies.allpairs()
                 ccy = Currency(s)
                 @test currencyiso(ct) == Symbol(s)
                 @test length(string(s)) == 3

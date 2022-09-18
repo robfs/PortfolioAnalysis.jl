@@ -56,13 +56,13 @@ function currencycode end
 function currencyname end
 
 ms = [:currencyunit, :currencycode, :currencyname]
-for (i,m) in enumerate(ms)
-    @eval $m(S::Symbol) = _currency_data[S][$(i+1)]
+for (i, m) in enumerate(ms)
+    @eval $m(S::Symbol) = _currency_data[S][$(i + 1)]
     @eval $m(::Type{Currency{S}}) where {S} = $m(S)
 end
 
 "Returns all currency symbols"
-allsymbols()  = keys(_currency_data)
+allsymbols() = keys(_currency_data)
 
 "Returns all currency data as a pairs Symbol => (Currency,Unit,Code,Name)"
 allpairs() = pairs(_currency_data)

@@ -3,9 +3,27 @@ module PortfolioAnalysis
 include("Currencies.jl")
 using .Currencies
 
-export Currency, CurrencyException, currency, iso, name, unit
-export Currencies, Currency, CurrencyException, currency, iso, name, unit
-export Currencies,
+include("Countries.jl")
+using .Countries
+
+# include("Securities.jl")
+# using .Securities
+
 export Currency, currency, currencyiso, currencyunit, currencycode, currencyname
+export Country, countrysymbol, country, @country
+export countryname,
+    countrycode, currencies, dial, capital, continent, isdeveloping, region, subregion
+
+# export AbstractSecurity,
+#     CashSecurity,
+#     CommonEquitySecurity,
+#     securityid,
+#     securityname,
+#     country,
+#     subindustrynum,
+#     industrynum,
+#     industrygroupnum,
+#     sectornum
+
 
 end
