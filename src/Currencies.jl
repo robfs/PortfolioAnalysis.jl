@@ -8,7 +8,7 @@ This module provides a `Currency` enum, based on the ISO 4217 standard together 
 """
 module Currencies
 
-export Currency, CurrencyException, currency, iso, name, unit
+export Currency, CurrencyException, currency, currencyiso, currencyname, currencyunit
 
 @enum Currency begin
     ALL = 8
@@ -176,9 +176,9 @@ struct CurrencyInfo
 end
 
 currency(c::CurrencyInfo) = c.currency
-iso(c::CurrencyInfo) = c.iso
-name(c::CurrencyInfo) = c.name
-unit(c::CurrencyInfo) = c.unit
+currencyiso(c::CurrencyInfo) = c.iso
+currencyname(c::CurrencyInfo) = c.name
+currencyunit(c::CurrencyInfo) = c.unit
 
 include(joinpath(@__DIR__, "..", "data", "currency-data.jl"))
 
@@ -199,22 +199,22 @@ function _lookup_currency(s::Symbol)::CurrencyInfo
 end
 
 currency(s::Symbol)::Currency = _lookup_currency(s) |> currency
-iso(s::Symbol)::Symbol = _lookup_currency(s) |> iso
-name(s::Symbol)::String = _lookup_currency(s) |> name
-unit(s::Symbol)::UInt = _lookup_currency(s) |> unit
+currencyiso(s::Symbol)::Symbol = _lookup_currency(s) |> currencyiso
+currencyname(s::Symbol)::String = _lookup_currency(s) |> currencyname
+currencyunit(s::Symbol)::UInt = _lookup_currency(s) |> currencyunit
 
 currency(s::AbstractString)::Currency = Symbol(s) |> currency
-iso(s::AbstractString)::Symbol = Symbol(s) |> iso
-name(s::AbstractString)::String = Symbol(s) |> name
-unit(s::AbstractString)::UInt = Symbol(s) |> unit
+currencyiso(s::AbstractString)::Symbol = Symbol(s) |> currencyiso
+currencyname(s::AbstractString)::String = Symbol(s) |> currencyname
+currencyunit(s::AbstractString)::UInt = Symbol(s) |> currencyunit
 
-iso(c::Currency)::Symbol = Symbol(c) |> iso
-name(c::Currency)::String = Symbol(c) |> name
-unit(c::Currency)::UInt = Symbol(c) |> unit
+currencyiso(c::Currency)::Symbol = Symbol(c) |> currencyiso
+currencyname(c::Currency)::String = Symbol(c) |> currencyname
+currencyunit(c::Currency)::UInt = Symbol(c) |> currencyunit
 
-Base.convert(::Type{Currency}, x::Symbol) = currency(x)
-Base.convert(::Type{Currency}, x::AbstractString) = currency(x)
-Base.convert(::Type{Symbol}, x::Currency) = iso(x)
-Base.convert(::Type{T}, x::Currency) where {T<:AbstractString} = iso(x) |> String
+Base.convert(::Type{Currency}, x::Symbol)::Currency = currency(x)
+Base.convert(::Type{Currency}, x::AbstractString)::Currency = currency(x)
+Base.convert(::Type{Symbol}, x::Currency) = currencyiso(x)
+Base.convert(::Type{T}, x::Currency) where {T<:AbstractString} = currencyiso(x) |> String
 
 end # module

@@ -11,13 +11,13 @@ using Test
 
         usd = currency(:USD)
 
-        @test iso(usd) == :USD
-        @test name(usd) == "US Dollar"
-        @test unit(usd) == 2
+        @test currencyiso(usd) == :USD
+        @test currencyname(usd) == "US Dollar"
+        @test currencyunit(usd) == 2
 
-        @test iso("USD") == :USD
-        @test name("USD") == "US Dollar"
-        @test unit("USD") == 2
+        @test currencyiso("USD") == :USD
+        @test currencyname("USD") == "US Dollar"
+        @test currencyunit("USD") == 2
 
         @test convert(Currency, :USD) == Currencies.USD
         @test convert(Currency, "USD") == Currencies.USD
