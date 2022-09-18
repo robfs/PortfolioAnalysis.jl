@@ -1,220 +1,70 @@
 """
 Currencies
-This module provides a `Currency` enum, based on the ISO 4217 standard together with four methods:
-- `currency`: The enum for a particular currency symbol.
-- `iso`: The iso symbol of the currency.
-- `name`: The ISO 4217 name of the currency.
-- `unit`: The ISO 4217 minor unit, i.e. number of decimal places, for the currency.
+
+This package provides the `Currency` singleton type, based on the ISO 4217 standard together with five methods:
+
+- `currencyiso`: The symbol of the currency.
+- `currency`: The singleton type for a particular currency symbol.
+- `currencyname`: The ISO 4217 name of the currency.
+- `currencycode`: The ISO 4217 code for the currency.
+- `currencyunit`: The ISO 4217 minor unit, i.e. number of decimal places, for the currency.
+
+See README.md for the full documentation
+
+Copyright 2019-2020, Eric Forgy, Scott P. Jones and other contributors
+
+Licensed under MIT License, see LICENSE.md
 """
 module Currencies
 
-export Currency, CurrencyException, currency, currencyiso, currencyname, currencyunit
+export Currency, currency, currencyiso, currencyunit, currencycode, currencyname
 
-@enum Currency begin
-    ALL = 8
-    DZD = 12
-    ARS = 32
-    AUD = 36
-    BSD = 44
-    BHD = 48
-    BDT = 50
-    AMD = 51
-    BBD = 52
-    BMD = 60
-    BTN = 64
-    BOB = 68
-    BWP = 72
-    BZD = 84
-    SBD = 90
-    BND = 96
-    MMK = 104
-    BIF = 108
-    KHR = 116
-    CAD = 124
-    CVE = 132
-    KYD = 136
-    LKR = 144
-    CLP = 152
-    CNY = 156
-    COP = 170
-    KMF = 174
-    CRC = 188
-    HRK = 191
-    CUP = 192
-    CZK = 203
-    DKK = 208
-    DOP = 214
-    SVC = 222
-    ETB = 230
-    ERN = 232
-    FJD = 242
-    DJF = 262
-    GMD = 270
-    GIP = 292
-    GTQ = 320
-    GNF = 324
-    GYD = 328
-    HTG = 332
-    HNL = 340
-    HKD = 344
-    HUF = 348
-    ISK = 352
-    INR = 356
-    IDR = 360
-    IRR = 364
-    IQD = 368
-    ILS = 376
-    JMD = 388
-    JPY = 392
-    KZT = 398
-    JOD = 400
-    KES = 404
-    KPW = 408
-    KRW = 410
-    KWD = 414
-    KGS = 417
-    LAK = 418
-    LBP = 422
-    LSL = 426
-    LRD = 430
-    LYD = 434
-    MOP = 446
-    MWK = 454
-    MYR = 458
-    MVR = 462
-    MRO = 478
-    MUR = 480
-    MXN = 484
-    MNT = 496
-    MDL = 498
-    MAD = 504
-    OMR = 512
-    NAD = 516
-    NPR = 524
-    ANG = 532
-    AWG = 533
-    VUV = 548
-    NZD = 554
-    NIO = 558
-    NGN = 566
-    NOK = 578
-    PKR = 586
-    PAB = 590
-    PGK = 598
-    PYG = 600
-    PEN = 604
-    PHP = 608
-    QAR = 634
-    RUB = 643
-    RWF = 646
-    SHP = 654
-    STD = 678
-    SAR = 682
-    SCR = 690
-    SLL = 694
-    SGD = 702
-    VND = 704
-    SOS = 706
-    ZAR = 710
-    SSP = 728
-    SZL = 748
-    SEK = 752
-    CHF = 756
-    SYP = 760
-    THB = 764
-    TOP = 776
-    TTD = 780
-    AED = 784
-    TND = 788
-    UGX = 800
-    MKD = 807
-    EGP = 818
-    GBP = 826
-    TZS = 834
-    USD = 840
-    UYU = 858
-    UZS = 860
-    WST = 882
-    YER = 886
-    CUC = 931
-    ZWL = 932
-    BYN = 933
-    TMT = 934
-    GHS = 936
-    VEF = 937
-    SDG = 938
-    RSD = 941
-    MZN = 943
-    AZN = 944
-    RON = 946
-    TRY = 949
-    XAF = 950
-    XCD = 951
-    XOF = 952
-    XPF = 953
-    ZMW = 967
-    SRD = 968
-    MGA = 969
-    AFN = 971
-    TJS = 972
-    AOA = 973
-    BGN = 975
-    CDF = 976
-    BAM = 977
-    EUR = 978
-    UAH = 980
-    GEL = 981
-    PLN = 985
-    BRL = 986
+"""
+This is a singleton type, intended to be used as a label for dispatch purposes
+"""
+struct Currency{S}
+    function Currency{S}() where {S}
+        haskey(_currency_data, S) || error("Currency $S is not defined.")
+        new{S}()
+    end
 end
-
-struct CurrencyInfo
-    currency::Currency
-    iso::Symbol
-    name::String
-    unit::UInt
-end
-
-currency(c::CurrencyInfo) = c.currency
-currencyiso(c::CurrencyInfo) = c.iso
-currencyname(c::CurrencyInfo) = c.name
-currencyunit(c::CurrencyInfo) = c.unit
+Currency(S::Symbol) = Currency{S}()
+Currency(S::AbstractString) = S |> Symbol |> Currency
 
 include(joinpath(@__DIR__, "..", "data", "currency-data.jl"))
 
-struct CurrencyException <: Exception
-    s::Symbol
+"Returns the symbol associated with a currency"
+function currencyiso end
+
+currencyiso(::Type{Currency{S}}) where {S} = S
+
+"Returns a singleton type Currency{S}"
+function currency end
+
+currency(S::Symbol) = _currency_data[S][1]
+currency(S::AbstractString) = S |> Symbol |> currency
+
+currency(::Type{C}) where {C<:Currency} = C
+
+"Returns the ISO 4217 minor unit associated with a currency"
+function currencyunit end
+
+"Returns the ISO 4217 code associated with a currency"
+function currencycode end
+
+"Returns the ISO 4217 name associated with a currency"
+function currencyname end
+
+ms = [:currencyunit, :currencycode, :currencyname]
+for (i,m) in enumerate(ms)
+    @eval $m(S::Symbol) = _currency_data[S][$(i+1)]
+    @eval $m(::Type{Currency{S}}) where {S} = $m(S)
 end
 
-Base.showerror(io::IO, e::CurrencyException) = print(io, "currency $(e.s) not recognized")
+"Returns all currency symbols"
+allsymbols()  = keys(_currency_data)
 
-function _lookup_currency(s::Symbol)::CurrencyInfo
-    try
-        CURRENCY_DATA[s]
-    catch error
-        if error isa KeyError
-            rethrow(CurrencyException(s))
-        end
-    end
-end
+"Returns all currency data as a pairs Symbol => (Currency,Unit,Code,Name)"
+allpairs() = pairs(_currency_data)
 
-currency(s::Symbol)::Currency = _lookup_currency(s) |> currency
-currencyiso(s::Symbol)::Symbol = _lookup_currency(s) |> currencyiso
-currencyname(s::Symbol)::String = _lookup_currency(s) |> currencyname
-currencyunit(s::Symbol)::UInt = _lookup_currency(s) |> currencyunit
-
-currency(s::AbstractString)::Currency = Symbol(s) |> currency
-currencyiso(s::AbstractString)::Symbol = Symbol(s) |> currencyiso
-currencyname(s::AbstractString)::String = Symbol(s) |> currencyname
-currencyunit(s::AbstractString)::UInt = Symbol(s) |> currencyunit
-
-currencyiso(c::Currency)::Symbol = Symbol(c) |> currencyiso
-currencyname(c::Currency)::String = Symbol(c) |> currencyname
-currencyunit(c::Currency)::UInt = Symbol(c) |> currencyunit
-
-Base.convert(::Type{Currency}, x::Symbol)::Currency = currency(x)
-Base.convert(::Type{Currency}, x::AbstractString)::Currency = currency(x)
-Base.convert(::Type{Symbol}, x::Currency) = currencyiso(x)
-Base.convert(::Type{T}, x::Currency) where {T<:AbstractString} = currencyiso(x) |> String
-
-end # module
+end # module Currencies
