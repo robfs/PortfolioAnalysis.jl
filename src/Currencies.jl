@@ -46,6 +46,9 @@ currency(S::AbstractString) = S |> Symbol |> currency
 
 currency(::Type{C}) where {C<:Currency} = C
 
+Base.convert(::Type{Type{Currency{S}} where {S}}, S::Symbol) = currency(S)
+Base.convert(::Type{Type{Currency{S}} where {S}}, S::AbstractString) = currency(S)
+
 "Returns the ISO 4217 minor unit associated with a currency"
 function currencyunit end
 

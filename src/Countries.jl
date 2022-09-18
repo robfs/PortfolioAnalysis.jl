@@ -58,6 +58,9 @@ country(S::AbstractString) = S |> Symbol |> country
 
 country(::Type{C}) where {C<:Country} = C
 
+Base.convert(::Type{Type{Country{S}} where {S}}, x::Symbol) = country(x)
+Base.convert(::Type{Type{Country{S}} where {S}}, x::AbstractString) = country(x)
+
 macro country(syms)
     args = syms isa Expr ? syms.args : [syms]
     for nam in args
