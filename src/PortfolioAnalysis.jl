@@ -11,9 +11,17 @@ using .Securities
 
 export Currency, currency, currencyiso, currencyunit, currencycode, currencyname
 
-export Country, countrysymbol, country, @country
-export countryname,
-    countrycode, currencies, dial, capital, continent, isdeveloping, region, subregion
+export Country, countryiso2, country, @country
+export countryiso3,
+    countryname,
+    countrycode,
+    currencies,
+    dial,
+    capital,
+    continent,
+    isdeveloping,
+    region,
+    subregion
 
 export AbstractSecurity,
     CashSecurity,

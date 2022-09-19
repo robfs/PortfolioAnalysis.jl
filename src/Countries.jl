@@ -4,7 +4,8 @@ Countries
 This package provides the `Country` singleton type, based on the ISO 3166 standard
 together with eleven methods:
 
-- `countrysymbol`: The 2-character ISO 3166 alpha symbol of the country.
+- `countryiso2`: The 2-character ISO 3166 alpha symbol of the country.
+- `countryiso3`: The 3-character ISO 3166 alpha symbol of the country.
 - `country`: The singleton type instance for a particular country symbol
 - `countryname`: The full name of the country.
 - `countrycode`: The ISO 3166 code for the country.
@@ -24,9 +25,17 @@ Licensed under MIT License, see LICENSE.md
 """
 module Countries
 
-export Country, countrysymbol, country, @country
-export countryname,
-    countrycode, currencies, dial, capital, continent, isdeveloping, region, subregion
+export Country, countryiso2, country, @country
+export countryiso3,
+    countryname,
+    countrycode,
+    currencies,
+    dial,
+    capital,
+    continent,
+    isdeveloping,
+    region,
+    subregion
 
 """
 This is a singleton type, intended to be used as a label for dispatch purposes
@@ -44,9 +53,9 @@ include(joinpath(@__DIR__, "..", "data", "country-data.jl"))
 """
 Returns the 2-character ISO 3166 alpha symbol associated with the country
 """
-function countrysymbol end
+function countryiso2 end
 
-countrysymbol(::Type{Country{S}}) where {S} = S
+countryiso2(::Type{Country{S}}) where {S} = S
 
 """
 Returns an instance of the singleton type Country{symbol}
@@ -67,6 +76,11 @@ macro country(syms)
         @eval __module__ const $nam = Countries.$nam
     end
 end
+
+"""
+Returns the 3-character ISO 3166 alpha symbol associated with the country
+"""
+function countryiso3 end
 
 """
 Returns the official name from the UN Statistics Division.
@@ -114,6 +128,7 @@ Returns the subregion of the country.
 function subregion end
 
 ms = [
+    :countryiso3,
     :countryname,
     :countrycode,
     :currencies,

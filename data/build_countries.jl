@@ -14,6 +14,7 @@ const country_list = Dict{String,Tuple}()
 function genfile(io)
     for c in country_data
         (cntry = c["ISO3166-1-Alpha-2"]) === nothing && continue
+        (iso3 = c["ISO3166-1-Alpha-3"]) === nothing && continue
         (nm = c["official_name_en"]) === nothing && continue
         (cd = c["ISO3166-1-numeric"]) === nothing && continue
         ccy_str = c["ISO4217-currency_alphabetic_code"]
@@ -25,7 +26,7 @@ function genfile(io)
         reg = c["Region Name"]
         sreg = c["Sub-region Name"]
 
-        country_list[cntry] = (nm, cd, ccy, d, cap, cont, isdev, reg, sreg)
+        country_list[cntry] = (nm, cd, ccy, d, cap, cont, isdev, reg, sreg, iso3)
     end
     println(io, "const _country_data = Dict(")
     for (c, val) in country_list
@@ -34,6 +35,7 @@ function genfile(io)
         print(
             io,
             "    :$c => (Country{:$c},",
+            "\"$(val[10])\",",
             "\"$(val[1])\",",
             val[2],
             ",",

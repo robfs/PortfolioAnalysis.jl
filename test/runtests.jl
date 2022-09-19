@@ -44,6 +44,7 @@ using Test
 
     @testset "Countries.jl" begin
         countries = country.([:US, :PH, :HK, :SG])
+        iso3s = ["USA", "PHL", "HKG", "SGP"]
         names = [
             "United States of America",
             "Philippines",
@@ -59,8 +60,9 @@ using Test
             ["Northern America", "South-eastern Asia", "Eastern Asia", "South-eastern Asia"]
 
         @testset "Basic countries" begin
-            for (c, nm, cd, cp, ct, dv, rg, sr) in zip(
+            for (c, iso3, nm, cd, cp, ct, dv, rg, sr) in zip(
                 countries,
+                iso3s,
                 names,
                 codes,
                 capitals,
@@ -69,6 +71,7 @@ using Test
                 regions,
                 subregions,
             )
+                @test countryiso3(c) == iso3
                 @test countryname(c) == nm
                 @test countrycode(c) == cd
                 @test capital(c) == cp
@@ -80,10 +83,11 @@ using Test
         end
         @testset "Validation" begin
             @test length(PortfolioAnalysis.Countries.allpairs()) >= 155
-            for (s, (ct, n, c, currs, d, cap, cont, isd, reg, sreg)) in
+            for (s, (ct, iso3, n, c, currs, d, cap, cont, isd, reg, sreg)) in
                 PortfolioAnalysis.Countries.allpairs()
                 cntry = Country(s)
-                @test countrysymbol(ct) == s
+                @test countryiso2(ct) == s
+                @test countryiso3(ct) == iso3
                 @test countryname(ct) == n
                 @test c > 0
                 @test all(currency(x) <: Currency for x in currs)
@@ -124,9 +128,7 @@ using Test
         end
 
         @testset "Common Equities" begin
-            equities = (
-                ("AAPL", "Apple Inc.", "US", "USD", 45202030),
-            )
+            equities = (("AAPL", "Apple Inc.", "US", "USD", 45202030),)
             for (s, n, c, cu, g) in equities
                 security = CommonEquitySecurity(s, n, c, cu, g)
                 @test securityid(security) == s

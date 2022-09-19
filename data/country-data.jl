@@ -1,6 +1,7 @@
 const _country_data = Dict(
     :BV => (
         Country{:BV},
+        "BVT",
         "Bouvet Island",
         074,
         [:NOK],
@@ -13,6 +14,7 @@ const _country_data = Dict(
     ),
     :OM => (
         Country{:OM},
+        "OMN",
         "Oman",
         512,
         [:OMR],
@@ -25,6 +27,7 @@ const _country_data = Dict(
     ),
     :TF => (
         Country{:TF},
+        "ATF",
         "French Southern Territories",
         260,
         [:EUR],
@@ -37,6 +40,7 @@ const _country_data = Dict(
     ),
     :NO => (
         Country{:NO},
+        "NOR",
         "Norway",
         578,
         [:NOK],
@@ -49,6 +53,7 @@ const _country_data = Dict(
     ),
     :DO => (
         Country{:DO},
+        "DOM",
         "Dominican Republic",
         214,
         [:DOP],
@@ -61,6 +66,7 @@ const _country_data = Dict(
     ),
     :SR => (
         Country{:SR},
+        "SUR",
         "Suriname",
         740,
         [:SRD],
@@ -73,6 +79,7 @@ const _country_data = Dict(
     ),
     :BS => (
         Country{:BS},
+        "BHS",
         "Bahamas",
         044,
         [:BSD],
@@ -85,6 +92,7 @@ const _country_data = Dict(
     ),
     :NP => (
         Country{:NP},
+        "NPL",
         "Nepal",
         524,
         [:NPR],
@@ -97,6 +105,7 @@ const _country_data = Dict(
     ),
     :HM => (
         Country{:HM},
+        "HMD",
         "Heard Island and McDonald Islands",
         334,
         [:AUD],
@@ -109,6 +118,7 @@ const _country_data = Dict(
     ),
     :SJ => (
         Country{:SJ},
+        "SJM",
         "Svalbard and Jan Mayen Islands",
         744,
         [:NOK],
@@ -121,6 +131,7 @@ const _country_data = Dict(
     ),
     :EG => (
         Country{:EG},
+        "EGY",
         "Egypt",
         818,
         [:EGP],
@@ -133,6 +144,7 @@ const _country_data = Dict(
     ),
     :EE => (
         Country{:EE},
+        "EST",
         "Estonia",
         233,
         [:EUR],
@@ -145,6 +157,7 @@ const _country_data = Dict(
     ),
     :CU => (
         Country{:CU},
+        "CUB",
         "Cuba",
         192,
         [:CUP, :CUC],
@@ -157,6 +170,7 @@ const _country_data = Dict(
     ),
     :US => (
         Country{:US},
+        "USA",
         "United States of America",
         840,
         [:USD],
@@ -169,6 +183,7 @@ const _country_data = Dict(
     ),
     :LU => (
         Country{:LU},
+        "LUX",
         "Luxembourg",
         442,
         [:EUR],
@@ -181,6 +196,7 @@ const _country_data = Dict(
     ),
     :CM => (
         Country{:CM},
+        "CMR",
         "Cameroon",
         120,
         [:XAF],
@@ -193,6 +209,7 @@ const _country_data = Dict(
     ),
     :AE => (
         Country{:AE},
+        "ARE",
         "United Arab Emirates",
         784,
         [:AED],
@@ -205,6 +222,7 @@ const _country_data = Dict(
     ),
     :FR => (
         Country{:FR},
+        "FRA",
         "France",
         250,
         [:EUR],
@@ -217,6 +235,7 @@ const _country_data = Dict(
     ),
     :FI => (
         Country{:FI},
+        "FIN",
         "Finland",
         246,
         [:EUR],
@@ -229,6 +248,7 @@ const _country_data = Dict(
     ),
     :MQ => (
         Country{:MQ},
+        "MTQ",
         "Martinique",
         474,
         [:EUR],
@@ -241,6 +261,7 @@ const _country_data = Dict(
     ),
     :VG => (
         Country{:VG},
+        "VGB",
         "British Virgin Islands",
         092,
         [:USD],
@@ -253,6 +274,7 @@ const _country_data = Dict(
     ),
     :JP => (
         Country{:JP},
+        "JPN",
         "Japan",
         392,
         [:JPY],
@@ -265,6 +287,7 @@ const _country_data = Dict(
     ),
     :TG => (
         Country{:TG},
+        "TGO",
         "Togo",
         768,
         [:XOF],
@@ -277,6 +300,7 @@ const _country_data = Dict(
     ),
     :GW => (
         Country{:GW},
+        "GNB",
         "Guinea-Bissau",
         624,
         [:XOF],
@@ -289,6 +313,7 @@ const _country_data = Dict(
     ),
     :NF => (
         Country{:NF},
+        "NFK",
         "Norfolk Island",
         574,
         [:AUD],
@@ -301,6 +326,7 @@ const _country_data = Dict(
     ),
     :IE => (
         Country{:IE},
+        "IRL",
         "Ireland",
         372,
         [:EUR],
@@ -313,6 +339,7 @@ const _country_data = Dict(
     ),
     :TV => (
         Country{:TV},
+        "TUV",
         "Tuvalu",
         798,
         [:AUD],
@@ -325,6 +352,7 @@ const _country_data = Dict(
     ),
     :MX => (
         Country{:MX},
+        "MEX",
         "Mexico",
         484,
         [:MXN],
@@ -337,6 +365,7 @@ const _country_data = Dict(
     ),
     :GY => (
         Country{:GY},
+        "GUY",
         "Guyana",
         328,
         [:GYD],
@@ -349,6 +378,7 @@ const _country_data = Dict(
     ),
     :CA => (
         Country{:CA},
+        "CAN",
         "Canada",
         124,
         [:CAD],
@@ -361,6 +391,7 @@ const _country_data = Dict(
     ),
     :AD => (
         Country{:AD},
+        "AND",
         "Andorra",
         020,
         [:EUR],
@@ -373,6 +404,7 @@ const _country_data = Dict(
     ),
     :MF => (
         Country{:MF},
+        "MAF",
         "Saint Martin (French Part)",
         663,
         [:EUR],
@@ -385,6 +417,7 @@ const _country_data = Dict(
     ),
     :VE => (
         Country{:VE},
+        "VEN",
         "Venezuela (Bolivarian Republic of)",
         862,
         [:VEF],
@@ -397,6 +430,7 @@ const _country_data = Dict(
     ),
     :KN => (
         Country{:KN},
+        "KNA",
         "Saint Kitts and Nevis",
         659,
         [:XCD],
@@ -409,6 +443,7 @@ const _country_data = Dict(
     ),
     :SD => (
         Country{:SD},
+        "SDN",
         "Sudan",
         729,
         [:SDG],
@@ -421,6 +456,7 @@ const _country_data = Dict(
     ),
     :GU => (
         Country{:GU},
+        "GUM",
         "Guam",
         316,
         [:USD],
@@ -433,6 +469,7 @@ const _country_data = Dict(
     ),
     :NE => (
         Country{:NE},
+        "NER",
         "Niger",
         562,
         [:XOF],
@@ -445,6 +482,7 @@ const _country_data = Dict(
     ),
     :TM => (
         Country{:TM},
+        "TKM",
         "Turkmenistan",
         795,
         [:TMT],
@@ -457,6 +495,7 @@ const _country_data = Dict(
     ),
     :BN => (
         Country{:BN},
+        "BRN",
         "Brunei Darussalam",
         096,
         [:BND],
@@ -469,6 +508,7 @@ const _country_data = Dict(
     ),
     :KZ => (
         Country{:KZ},
+        "KAZ",
         "Kazakhstan",
         398,
         [:KZT],
@@ -481,6 +521,7 @@ const _country_data = Dict(
     ),
     :CI => (
         Country{:CI},
+        "CIV",
         "Côte d'Ivoire",
         384,
         [:XOF],
@@ -493,6 +534,7 @@ const _country_data = Dict(
     ),
     :SX => (
         Country{:SX},
+        "SXM",
         "Sint Maarten (Dutch part)",
         534,
         [:ANG],
@@ -505,6 +547,7 @@ const _country_data = Dict(
     ),
     :CO => (
         Country{:CO},
+        "COL",
         "Colombia",
         170,
         [:COP],
@@ -517,6 +560,7 @@ const _country_data = Dict(
     ),
     :QA => (
         Country{:QA},
+        "QAT",
         "Qatar",
         634,
         [:QAR],
@@ -529,6 +573,7 @@ const _country_data = Dict(
     ),
     :PG => (
         Country{:PG},
+        "PNG",
         "Papua New Guinea",
         598,
         [:PGK],
@@ -541,6 +586,7 @@ const _country_data = Dict(
     ),
     :LV => (
         Country{:LV},
+        "LVA",
         "Latvia",
         428,
         [:EUR],
@@ -553,6 +599,7 @@ const _country_data = Dict(
     ),
     :UY => (
         Country{:UY},
+        "URY",
         "Uruguay",
         858,
         [:UYU],
@@ -565,6 +612,7 @@ const _country_data = Dict(
     ),
     :RO => (
         Country{:RO},
+        "ROU",
         "Romania",
         642,
         [:RON],
@@ -577,6 +625,7 @@ const _country_data = Dict(
     ),
     :IM => (
         Country{:IM},
+        "IMN",
         "Isle of Man",
         833,
         [:GBP],
@@ -589,6 +638,7 @@ const _country_data = Dict(
     ),
     :VA => (
         Country{:VA},
+        "VAT",
         "Holy See",
         336,
         [:EUR],
@@ -601,6 +651,7 @@ const _country_data = Dict(
     ),
     :PA => (
         Country{:PA},
+        "PAN",
         "Panama",
         591,
         [:PAB, :USD],
@@ -613,6 +664,7 @@ const _country_data = Dict(
     ),
     :BI => (
         Country{:BI},
+        "BDI",
         "Burundi",
         108,
         [:BIF],
@@ -625,6 +677,7 @@ const _country_data = Dict(
     ),
     :CC => (
         Country{:CC},
+        "CCK",
         "Cocos (Keeling) Islands",
         166,
         [:AUD],
@@ -637,6 +690,7 @@ const _country_data = Dict(
     ),
     :SA => (
         Country{:SA},
+        "SAU",
         "Saudi Arabia",
         682,
         [:SAR],
@@ -649,6 +703,7 @@ const _country_data = Dict(
     ),
     :PF => (
         Country{:PF},
+        "PYF",
         "French Polynesia",
         258,
         [:XPF],
@@ -661,6 +716,7 @@ const _country_data = Dict(
     ),
     :VU => (
         Country{:VU},
+        "VUT",
         "Vanuatu",
         548,
         [:VUV],
@@ -673,6 +729,7 @@ const _country_data = Dict(
     ),
     :YT => (
         Country{:YT},
+        "MYT",
         "Mayotte",
         175,
         [:EUR],
@@ -685,6 +742,7 @@ const _country_data = Dict(
     ),
     :AU => (
         Country{:AU},
+        "AUS",
         "Australia",
         036,
         [:AUD],
@@ -697,6 +755,7 @@ const _country_data = Dict(
     ),
     :TR => (
         Country{:TR},
+        "TUR",
         "Turkey",
         792,
         [:TRY],
@@ -709,6 +768,7 @@ const _country_data = Dict(
     ),
     :WS => (
         Country{:WS},
+        "WSM",
         "Samoa",
         882,
         [:WST],
@@ -721,6 +781,7 @@ const _country_data = Dict(
     ),
     :GB => (
         Country{:GB},
+        "GBR",
         "United Kingdom of Great Britain and Northern Ireland",
         826,
         [:GBP],
@@ -733,6 +794,7 @@ const _country_data = Dict(
     ),
     :GN => (
         Country{:GN},
+        "GIN",
         "Guinea",
         324,
         [:GNF],
@@ -745,6 +807,7 @@ const _country_data = Dict(
     ),
     :GT => (
         Country{:GT},
+        "GTM",
         "Guatemala",
         320,
         [:GTQ],
@@ -757,6 +820,7 @@ const _country_data = Dict(
     ),
     :UA => (
         Country{:UA},
+        "UKR",
         "Ukraine",
         804,
         [:UAH],
@@ -769,6 +833,7 @@ const _country_data = Dict(
     ),
     :GA => (
         Country{:GA},
+        "GAB",
         "Gabon",
         266,
         [:XAF],
@@ -781,6 +846,7 @@ const _country_data = Dict(
     ),
     :BZ => (
         Country{:BZ},
+        "BLZ",
         "Belize",
         084,
         [:BZD],
@@ -793,6 +859,7 @@ const _country_data = Dict(
     ),
     :MS => (
         Country{:MS},
+        "MSR",
         "Montserrat",
         500,
         [:XCD],
@@ -805,6 +872,7 @@ const _country_data = Dict(
     ),
     :BA => (
         Country{:BA},
+        "BIH",
         "Bosnia and Herzegovina",
         070,
         [:BAM],
@@ -817,6 +885,7 @@ const _country_data = Dict(
     ),
     :KP => (
         Country{:KP},
+        "PRK",
         "Democratic People's Republic of Korea",
         408,
         [:KPW],
@@ -829,6 +898,7 @@ const _country_data = Dict(
     ),
     :SS => (
         Country{:SS},
+        "SSD",
         "South Sudan",
         728,
         [:SSP],
@@ -841,6 +911,7 @@ const _country_data = Dict(
     ),
     :PL => (
         Country{:PL},
+        "POL",
         "Poland",
         616,
         [:PLN],
@@ -853,6 +924,7 @@ const _country_data = Dict(
     ),
     :KI => (
         Country{:KI},
+        "KIR",
         "Kiribati",
         296,
         [:AUD],
@@ -865,6 +937,7 @@ const _country_data = Dict(
     ),
     :PR => (
         Country{:PR},
+        "PRI",
         "Puerto Rico",
         630,
         [:USD],
@@ -877,6 +950,7 @@ const _country_data = Dict(
     ),
     :HR => (
         Country{:HR},
+        "HRV",
         "Croatia",
         191,
         [:HRK],
@@ -889,6 +963,7 @@ const _country_data = Dict(
     ),
     :TT => (
         Country{:TT},
+        "TTO",
         "Trinidad and Tobago",
         780,
         [:TTD],
@@ -901,6 +976,7 @@ const _country_data = Dict(
     ),
     :PE => (
         Country{:PE},
+        "PER",
         "Peru",
         604,
         [:PEN],
@@ -913,6 +989,7 @@ const _country_data = Dict(
     ),
     :MR => (
         Country{:MR},
+        "MRT",
         "Mauritania",
         478,
         [:MRO],
@@ -925,6 +1002,7 @@ const _country_data = Dict(
     ),
     :CZ => (
         Country{:CZ},
+        "CZE",
         "Czechia",
         203,
         [:CZK],
@@ -937,6 +1015,7 @@ const _country_data = Dict(
     ),
     :AG => (
         Country{:AG},
+        "ATG",
         "Antigua and Barbuda",
         028,
         [:XCD],
@@ -949,6 +1028,7 @@ const _country_data = Dict(
     ),
     :BD => (
         Country{:BD},
+        "BGD",
         "Bangladesh",
         050,
         [:BDT],
@@ -961,6 +1041,7 @@ const _country_data = Dict(
     ),
     :MH => (
         Country{:MH},
+        "MHL",
         "Marshall Islands",
         584,
         [:USD],
@@ -973,6 +1054,7 @@ const _country_data = Dict(
     ),
     :MT => (
         Country{:MT},
+        "MLT",
         "Malta",
         470,
         [:EUR],
@@ -985,6 +1067,7 @@ const _country_data = Dict(
     ),
     :BT => (
         Country{:BT},
+        "BTN",
         "Bhutan",
         064,
         [:INR, :BTN],
@@ -997,6 +1080,7 @@ const _country_data = Dict(
     ),
     :SI => (
         Country{:SI},
+        "SVN",
         "Slovenia",
         705,
         [:EUR],
@@ -1009,6 +1093,7 @@ const _country_data = Dict(
     ),
     :AS => (
         Country{:AS},
+        "ASM",
         "American Samoa",
         016,
         [:USD],
@@ -1021,6 +1106,7 @@ const _country_data = Dict(
     ),
     :MG => (
         Country{:MG},
+        "MDG",
         "Madagascar",
         450,
         [:MGA],
@@ -1033,6 +1119,7 @@ const _country_data = Dict(
     ),
     :MC => (
         Country{:MC},
+        "MCO",
         "Monaco",
         492,
         [:EUR],
@@ -1045,6 +1132,7 @@ const _country_data = Dict(
     ),
     :FK => (
         Country{:FK},
+        "FLK",
         "Falkland Islands (Malvinas)",
         238,
         Symbol[],
@@ -1057,6 +1145,7 @@ const _country_data = Dict(
     ),
     :IR => (
         Country{:IR},
+        "IRN",
         "Iran (Islamic Republic of)",
         364,
         [:IRR],
@@ -1069,6 +1158,7 @@ const _country_data = Dict(
     ),
     :TZ => (
         Country{:TZ},
+        "TZA",
         "United Republic of Tanzania",
         834,
         [:TZS],
@@ -1081,6 +1171,7 @@ const _country_data = Dict(
     ),
     :BY => (
         Country{:BY},
+        "BLR",
         "Belarus",
         112,
         [:BYN],
@@ -1093,6 +1184,7 @@ const _country_data = Dict(
     ),
     :LC => (
         Country{:LC},
+        "LCA",
         "Saint Lucia",
         662,
         [:XCD],
@@ -1105,6 +1197,7 @@ const _country_data = Dict(
     ),
     :IQ => (
         Country{:IQ},
+        "IRQ",
         "Iraq",
         368,
         [:IQD],
@@ -1117,6 +1210,7 @@ const _country_data = Dict(
     ),
     :FO => (
         Country{:FO},
+        "FRO",
         "Faroe Islands",
         234,
         [:DKK],
@@ -1129,6 +1223,7 @@ const _country_data = Dict(
     ),
     :IS => (
         Country{:IS},
+        "ISL",
         "Iceland",
         352,
         [:ISK],
@@ -1141,6 +1236,7 @@ const _country_data = Dict(
     ),
     :BO => (
         Country{:BO},
+        "BOL",
         "Bolivia (Plurinational State of)",
         068,
         [:BOB],
@@ -1153,6 +1249,7 @@ const _country_data = Dict(
     ),
     :SH => (
         Country{:SH},
+        "SHN",
         "Saint Helena",
         654,
         [:SHP],
@@ -1165,6 +1262,7 @@ const _country_data = Dict(
     ),
     :CL => (
         Country{:CL},
+        "CHL",
         "Chile",
         152,
         [:CLP],
@@ -1177,6 +1275,7 @@ const _country_data = Dict(
     ),
     :CW => (
         Country{:CW},
+        "CUW",
         "Curaçao",
         531,
         [:ANG],
@@ -1189,6 +1288,7 @@ const _country_data = Dict(
     ),
     :BJ => (
         Country{:BJ},
+        "BEN",
         "Benin",
         204,
         [:XOF],
@@ -1201,6 +1301,7 @@ const _country_data = Dict(
     ),
     :DK => (
         Country{:DK},
+        "DNK",
         "Denmark",
         208,
         [:DKK],
@@ -1213,6 +1314,7 @@ const _country_data = Dict(
     ),
     :IN => (
         Country{:IN},
+        "IND",
         "India",
         356,
         [:INR],
@@ -1225,6 +1327,7 @@ const _country_data = Dict(
     ),
     :UM => (
         Country{:UM},
+        "UMI",
         "United States Minor Outlying Islands",
         581,
         [:USD],
@@ -1237,6 +1340,7 @@ const _country_data = Dict(
     ),
     :GM => (
         Country{:GM},
+        "GMB",
         "Gambia",
         270,
         [:GMD],
@@ -1249,6 +1353,7 @@ const _country_data = Dict(
     ),
     :AM => (
         Country{:AM},
+        "ARM",
         "Armenia",
         051,
         [:AMD],
@@ -1261,6 +1366,7 @@ const _country_data = Dict(
     ),
     :DZ => (
         Country{:DZ},
+        "DZA",
         "Algeria",
         012,
         [:DZD],
@@ -1273,6 +1379,7 @@ const _country_data = Dict(
     ),
     :KW => (
         Country{:KW},
+        "KWT",
         "Kuwait",
         414,
         [:KWD],
@@ -1285,6 +1392,7 @@ const _country_data = Dict(
     ),
     :TJ => (
         Country{:TJ},
+        "TJK",
         "Tajikistan",
         762,
         [:TJS],
@@ -1297,6 +1405,7 @@ const _country_data = Dict(
     ),
     :LK => (
         Country{:LK},
+        "LKA",
         "Sri Lanka",
         144,
         [:LKR],
@@ -1309,6 +1418,7 @@ const _country_data = Dict(
     ),
     :UG => (
         Country{:UG},
+        "UGA",
         "Uganda",
         800,
         [:UGX],
@@ -1321,6 +1431,7 @@ const _country_data = Dict(
     ),
     :ZW => (
         Country{:ZW},
+        "ZWE",
         "Zimbabwe",
         716,
         [:ZWL],
@@ -1333,6 +1444,7 @@ const _country_data = Dict(
     ),
     :MY => (
         Country{:MY},
+        "MYS",
         "Malaysia",
         458,
         [:MYR],
@@ -1345,6 +1457,7 @@ const _country_data = Dict(
     ),
     :GD => (
         Country{:GD},
+        "GRD",
         "Grenada",
         308,
         [:XCD],
@@ -1357,6 +1470,7 @@ const _country_data = Dict(
     ),
     :ES => (
         Country{:ES},
+        "ESP",
         "Spain",
         724,
         [:EUR],
@@ -1369,6 +1483,7 @@ const _country_data = Dict(
     ),
     :SM => (
         Country{:SM},
+        "SMR",
         "San Marino",
         674,
         [:EUR],
@@ -1381,6 +1496,7 @@ const _country_data = Dict(
     ),
     :BB => (
         Country{:BB},
+        "BRB",
         "Barbados",
         052,
         [:BBD],
@@ -1393,6 +1509,7 @@ const _country_data = Dict(
     ),
     :VN => (
         Country{:VN},
+        "VNM",
         "Viet Nam",
         704,
         [:VND],
@@ -1405,6 +1522,7 @@ const _country_data = Dict(
     ),
     :CF => (
         Country{:CF},
+        "CAF",
         "Central African Republic",
         140,
         [:XAF],
@@ -1417,6 +1535,7 @@ const _country_data = Dict(
     ),
     :DJ => (
         Country{:DJ},
+        "DJI",
         "Djibouti",
         262,
         [:DJF],
@@ -1429,6 +1548,7 @@ const _country_data = Dict(
     ),
     :FJ => (
         Country{:FJ},
+        "FJI",
         "Fiji",
         242,
         [:FJD],
@@ -1441,6 +1561,7 @@ const _country_data = Dict(
     ),
     :ST => (
         Country{:ST},
+        "STP",
         "Sao Tome and Principe",
         678,
         [:STD],
@@ -1453,6 +1574,7 @@ const _country_data = Dict(
     ),
     :GP => (
         Country{:GP},
+        "GLP",
         "Guadeloupe",
         312,
         [:EUR],
@@ -1465,6 +1587,7 @@ const _country_data = Dict(
     ),
     :NZ => (
         Country{:NZ},
+        "NZL",
         "New Zealand",
         554,
         [:NZD],
@@ -1477,6 +1600,7 @@ const _country_data = Dict(
     ),
     :SY => (
         Country{:SY},
+        "SYR",
         "Syrian Arab Republic",
         760,
         [:SYP],
@@ -1489,6 +1613,7 @@ const _country_data = Dict(
     ),
     :PH => (
         Country{:PH},
+        "PHL",
         "Philippines",
         608,
         [:PHP],
@@ -1501,6 +1626,7 @@ const _country_data = Dict(
     ),
     :IL => (
         Country{:IL},
+        "ISR",
         "Israel",
         376,
         [:ILS],
@@ -1513,6 +1639,7 @@ const _country_data = Dict(
     ),
     :JE => (
         Country{:JE},
+        "JEY",
         "Jersey",
         832,
         [:GBP],
@@ -1525,6 +1652,7 @@ const _country_data = Dict(
     ),
     :IO => (
         Country{:IO},
+        "IOT",
         "British Indian Ocean Territory",
         086,
         [:USD],
@@ -1537,6 +1665,7 @@ const _country_data = Dict(
     ),
     :KE => (
         Country{:KE},
+        "KEN",
         "Kenya",
         404,
         [:KES],
@@ -1549,6 +1678,7 @@ const _country_data = Dict(
     ),
     :MW => (
         Country{:MW},
+        "MWI",
         "Malawi",
         454,
         [:MWK],
@@ -1561,6 +1691,7 @@ const _country_data = Dict(
     ),
     :MV => (
         Country{:MV},
+        "MDV",
         "Maldives",
         462,
         [:MVR],
@@ -1573,6 +1704,7 @@ const _country_data = Dict(
     ),
     :AW => (
         Country{:AW},
+        "ABW",
         "Aruba",
         533,
         [:AWG],
@@ -1585,6 +1717,7 @@ const _country_data = Dict(
     ),
     :HK => (
         Country{:HK},
+        "HKG",
         "China, Hong Kong Special Administrative Region",
         344,
         [:HKD],
@@ -1597,6 +1730,7 @@ const _country_data = Dict(
     ),
     :SZ => (
         Country{:SZ},
+        "SWZ",
         "Swaziland",
         748,
         [:SZL],
@@ -1609,6 +1743,7 @@ const _country_data = Dict(
     ),
     :ID => (
         Country{:ID},
+        "IDN",
         "Indonesia",
         360,
         [:IDR],
@@ -1621,6 +1756,7 @@ const _country_data = Dict(
     ),
     :AT => (
         Country{:AT},
+        "AUT",
         "Austria",
         040,
         [:EUR],
@@ -1633,6 +1769,7 @@ const _country_data = Dict(
     ),
     :LR => (
         Country{:LR},
+        "LBR",
         "Liberia",
         430,
         [:LRD],
@@ -1645,6 +1782,7 @@ const _country_data = Dict(
     ),
     :SO => (
         Country{:SO},
+        "SOM",
         "Somalia",
         706,
         [:SOS],
@@ -1657,6 +1795,7 @@ const _country_data = Dict(
     ),
     :MZ => (
         Country{:MZ},
+        "MOZ",
         "Mozambique",
         508,
         [:MZN],
@@ -1669,6 +1808,7 @@ const _country_data = Dict(
     ),
     :TK => (
         Country{:TK},
+        "TKL",
         "Tokelau",
         772,
         [:NZD],
@@ -1681,6 +1821,7 @@ const _country_data = Dict(
     ),
     :MA => (
         Country{:MA},
+        "MAR",
         "Morocco",
         504,
         [:MAD],
@@ -1693,6 +1834,7 @@ const _country_data = Dict(
     ),
     :SK => (
         Country{:SK},
+        "SVK",
         "Slovakia",
         703,
         [:EUR],
@@ -1705,6 +1847,7 @@ const _country_data = Dict(
     ),
     :SV => (
         Country{:SV},
+        "SLV",
         "El Salvador",
         222,
         [:SVC, :USD],
@@ -1717,6 +1860,7 @@ const _country_data = Dict(
     ),
     :CD => (
         Country{:CD},
+        "COD",
         "Democratic Republic of the Congo",
         180,
         [:CDF],
@@ -1729,6 +1873,7 @@ const _country_data = Dict(
     ),
     :CH => (
         Country{:CH},
+        "CHE",
         "Switzerland",
         756,
         [:CHF],
@@ -1741,6 +1886,7 @@ const _country_data = Dict(
     ),
     :KH => (
         Country{:KH},
+        "KHM",
         "Cambodia",
         116,
         [:KHR],
@@ -1753,6 +1899,7 @@ const _country_data = Dict(
     ),
     :BL => (
         Country{:BL},
+        "BLM",
         "Saint Barthélemy",
         652,
         [:EUR],
@@ -1765,6 +1912,7 @@ const _country_data = Dict(
     ),
     :GQ => (
         Country{:GQ},
+        "GNQ",
         "Equatorial Guinea",
         226,
         [:XAF],
@@ -1777,6 +1925,7 @@ const _country_data = Dict(
     ),
     :ZA => (
         Country{:ZA},
+        "ZAF",
         "South Africa",
         710,
         [:ZAR],
@@ -1789,6 +1938,7 @@ const _country_data = Dict(
     ),
     :GG => (
         Country{:GG},
+        "GGY",
         "Guernsey",
         831,
         [:GBP],
@@ -1801,6 +1951,7 @@ const _country_data = Dict(
     ),
     :MO => (
         Country{:MO},
+        "MAC",
         "China, Macao Special Administrative Region",
         446,
         [:MOP],
@@ -1813,6 +1964,7 @@ const _country_data = Dict(
     ),
     :HN => (
         Country{:HN},
+        "HND",
         "Honduras",
         340,
         [:HNL],
@@ -1825,6 +1977,7 @@ const _country_data = Dict(
     ),
     :SL => (
         Country{:SL},
+        "SLE",
         "Sierra Leone",
         694,
         [:SLL],
@@ -1837,6 +1990,7 @@ const _country_data = Dict(
     ),
     :LI => (
         Country{:LI},
+        "LIE",
         "Liechtenstein",
         438,
         [:CHF],
@@ -1849,6 +2003,7 @@ const _country_data = Dict(
     ),
     :IT => (
         Country{:IT},
+        "ITA",
         "Italy",
         380,
         [:EUR],
@@ -1861,6 +2016,7 @@ const _country_data = Dict(
     ),
     :YE => (
         Country{:YE},
+        "YEM",
         "Yemen",
         887,
         [:YER],
@@ -1873,6 +2029,7 @@ const _country_data = Dict(
     ),
     :SC => (
         Country{:SC},
+        "SYC",
         "Seychelles",
         690,
         [:SCR],
@@ -1885,6 +2042,7 @@ const _country_data = Dict(
     ),
     :ME => (
         Country{:ME},
+        "MNE",
         "Montenegro",
         499,
         [:EUR],
@@ -1897,6 +2055,7 @@ const _country_data = Dict(
     ),
     :CV => (
         Country{:CV},
+        "CPV",
         "Cabo Verde",
         132,
         [:CVE],
@@ -1909,6 +2068,7 @@ const _country_data = Dict(
     ),
     :BE => (
         Country{:BE},
+        "BEL",
         "Belgium",
         056,
         [:EUR],
@@ -1921,6 +2081,7 @@ const _country_data = Dict(
     ),
     :NC => (
         Country{:NC},
+        "NCL",
         "New Caledonia",
         540,
         [:XPF],
@@ -1933,6 +2094,7 @@ const _country_data = Dict(
     ),
     :GF => (
         Country{:GF},
+        "GUF",
         "French Guiana",
         254,
         [:EUR],
@@ -1945,6 +2107,7 @@ const _country_data = Dict(
     ),
     :JO => (
         Country{:JO},
+        "JOR",
         "Jordan",
         400,
         [:JOD],
@@ -1957,6 +2120,7 @@ const _country_data = Dict(
     ),
     :GH => (
         Country{:GH},
+        "GHA",
         "Ghana",
         288,
         [:GHS],
@@ -1969,6 +2133,7 @@ const _country_data = Dict(
     ),
     :DE => (
         Country{:DE},
+        "DEU",
         "Germany",
         276,
         [:EUR],
@@ -1981,6 +2146,7 @@ const _country_data = Dict(
     ),
     :BQ => (
         Country{:BQ},
+        "BES",
         "Bonaire, Sint Eustatius and Saba",
         535,
         [:USD],
@@ -1993,6 +2159,7 @@ const _country_data = Dict(
     ),
     :MD => (
         Country{:MD},
+        "MDA",
         "Republic of Moldova",
         498,
         [:MDL],
@@ -2005,6 +2172,7 @@ const _country_data = Dict(
     ),
     :AO => (
         Country{:AO},
+        "AGO",
         "Angola",
         024,
         [:AOA],
@@ -2017,6 +2185,7 @@ const _country_data = Dict(
     ),
     :CK => (
         Country{:CK},
+        "COK",
         "Cook Islands",
         184,
         [:NZD],
@@ -2029,6 +2198,7 @@ const _country_data = Dict(
     ),
     :TO => (
         Country{:TO},
+        "TON",
         "Tonga",
         776,
         [:TOP],
@@ -2041,6 +2211,7 @@ const _country_data = Dict(
     ),
     :LT => (
         Country{:LT},
+        "LTU",
         "Lithuania",
         440,
         [:EUR],
@@ -2053,6 +2224,7 @@ const _country_data = Dict(
     ),
     :RU => (
         Country{:RU},
+        "RUS",
         "Russian Federation",
         643,
         [:RUB],
@@ -2065,6 +2237,7 @@ const _country_data = Dict(
     ),
     :AI => (
         Country{:AI},
+        "AIA",
         "Anguilla",
         660,
         [:XCD],
@@ -2077,6 +2250,7 @@ const _country_data = Dict(
     ),
     :AQ => (
         Country{:AQ},
+        "ATA",
         "Antarctica",
         010,
         Symbol[],
@@ -2089,6 +2263,7 @@ const _country_data = Dict(
     ),
     :EC => (
         Country{:EC},
+        "ECU",
         "Ecuador",
         218,
         [:USD],
@@ -2101,6 +2276,7 @@ const _country_data = Dict(
     ),
     :HT => (
         Country{:HT},
+        "HTI",
         "Haiti",
         332,
         [:HTG, :USD],
@@ -2113,6 +2289,7 @@ const _country_data = Dict(
     ),
     :EH => (
         Country{:EH},
+        "ESH",
         "Western Sahara",
         732,
         [:MAD],
@@ -2125,6 +2302,7 @@ const _country_data = Dict(
     ),
     :SE => (
         Country{:SE},
+        "SWE",
         "Sweden",
         752,
         [:SEK],
@@ -2137,6 +2315,7 @@ const _country_data = Dict(
     ),
     :CG => (
         Country{:CG},
+        "COG",
         "Congo",
         178,
         [:XAF],
@@ -2149,6 +2328,7 @@ const _country_data = Dict(
     ),
     :PN => (
         Country{:PN},
+        "PCN",
         "Pitcairn",
         612,
         [:NZD],
@@ -2161,6 +2341,7 @@ const _country_data = Dict(
     ),
     :KG => (
         Country{:KG},
+        "KGZ",
         "Kyrgyzstan",
         417,
         [:KGS],
@@ -2173,6 +2354,7 @@ const _country_data = Dict(
     ),
     :MN => (
         Country{:MN},
+        "MNG",
         "Mongolia",
         496,
         [:MNT],
@@ -2185,6 +2367,7 @@ const _country_data = Dict(
     ),
     :NG => (
         Country{:NG},
+        "NGA",
         "Nigeria",
         566,
         [:NGN],
@@ -2197,6 +2380,7 @@ const _country_data = Dict(
     ),
     :PS => (
         Country{:PS},
+        "PSE",
         "State of Palestine",
         275,
         Symbol[],
@@ -2209,6 +2393,7 @@ const _country_data = Dict(
     ),
     :MM => (
         Country{:MM},
+        "MMR",
         "Myanmar",
         104,
         [:MMK],
@@ -2221,6 +2406,7 @@ const _country_data = Dict(
     ),
     :ML => (
         Country{:ML},
+        "MLI",
         "Mali",
         466,
         [:XOF],
@@ -2233,6 +2419,7 @@ const _country_data = Dict(
     ),
     :LA => (
         Country{:LA},
+        "LAO",
         "Lao People's Democratic Republic",
         418,
         [:LAK],
@@ -2245,6 +2432,7 @@ const _country_data = Dict(
     ),
     :PK => (
         Country{:PK},
+        "PAK",
         "Pakistan",
         586,
         [:PKR],
@@ -2257,6 +2445,7 @@ const _country_data = Dict(
     ),
     :LB => (
         Country{:LB},
+        "LBN",
         "Lebanon",
         422,
         [:LBP],
@@ -2269,6 +2458,7 @@ const _country_data = Dict(
     ),
     :GR => (
         Country{:GR},
+        "GRC",
         "Greece",
         300,
         [:EUR],
@@ -2281,6 +2471,7 @@ const _country_data = Dict(
     ),
     :WF => (
         Country{:WF},
+        "WLF",
         "Wallis and Futuna Islands",
         876,
         [:XPF],
@@ -2293,6 +2484,7 @@ const _country_data = Dict(
     ),
     :HU => (
         Country{:HU},
+        "HUN",
         "Hungary",
         348,
         [:HUF],
@@ -2305,6 +2497,7 @@ const _country_data = Dict(
     ),
     :RS => (
         Country{:RS},
+        "SRB",
         "Serbia",
         688,
         [:RSD],
@@ -2317,6 +2510,7 @@ const _country_data = Dict(
     ),
     :BF => (
         Country{:BF},
+        "BFA",
         "Burkina Faso",
         854,
         [:XOF],
@@ -2329,6 +2523,7 @@ const _country_data = Dict(
     ),
     :KR => (
         Country{:KR},
+        "KOR",
         "Republic of Korea",
         410,
         [:KRW],
@@ -2341,6 +2536,7 @@ const _country_data = Dict(
     ),
     :CN => (
         Country{:CN},
+        "CHN",
         "China",
         156,
         [:CNY],
@@ -2353,6 +2549,7 @@ const _country_data = Dict(
     ),
     :ER => (
         Country{:ER},
+        "ERI",
         "Eritrea",
         232,
         [:ERN],
@@ -2365,6 +2562,7 @@ const _country_data = Dict(
     ),
     :ET => (
         Country{:ET},
+        "ETH",
         "Ethiopia",
         231,
         [:ETB],
@@ -2377,6 +2575,7 @@ const _country_data = Dict(
     ),
     :GE => (
         Country{:GE},
+        "GEO",
         "Georgia",
         268,
         [:GEL],
@@ -2389,6 +2588,7 @@ const _country_data = Dict(
     ),
     :BM => (
         Country{:BM},
+        "BMU",
         "Bermuda",
         060,
         [:BMD],
@@ -2401,6 +2601,7 @@ const _country_data = Dict(
     ),
     :TH => (
         Country{:TH},
+        "THA",
         "Thailand",
         764,
         [:THB],
@@ -2413,6 +2614,7 @@ const _country_data = Dict(
     ),
     :SN => (
         Country{:SN},
+        "SEN",
         "Senegal",
         686,
         [:XOF],
@@ -2425,6 +2627,7 @@ const _country_data = Dict(
     ),
     :TD => (
         Country{:TD},
+        "TCD",
         "Chad",
         148,
         [:XAF],
@@ -2437,6 +2640,7 @@ const _country_data = Dict(
     ),
     :NL => (
         Country{:NL},
+        "NLD",
         "Netherlands",
         528,
         [:EUR],
@@ -2449,6 +2653,7 @@ const _country_data = Dict(
     ),
     :NU => (
         Country{:NU},
+        "NIU",
         "Niue",
         570,
         [:NZD],
@@ -2461,6 +2666,7 @@ const _country_data = Dict(
     ),
     :BG => (
         Country{:BG},
+        "BGR",
         "Bulgaria",
         100,
         [:BGN],
@@ -2473,6 +2679,7 @@ const _country_data = Dict(
     ),
     :NR => (
         Country{:NR},
+        "NRU",
         "Nauru",
         520,
         [:AUD],
@@ -2485,6 +2692,7 @@ const _country_data = Dict(
     ),
     :TC => (
         Country{:TC},
+        "TCA",
         "Turks and Caicos Islands",
         796,
         [:USD],
@@ -2497,6 +2705,7 @@ const _country_data = Dict(
     ),
     :VI => (
         Country{:VI},
+        "VIR",
         "United States Virgin Islands",
         850,
         [:USD],
@@ -2509,6 +2718,7 @@ const _country_data = Dict(
     ),
     :FM => (
         Country{:FM},
+        "FSM",
         "Micronesia (Federated States of)",
         583,
         [:USD],
@@ -2521,6 +2731,7 @@ const _country_data = Dict(
     ),
     :BH => (
         Country{:BH},
+        "BHR",
         "Bahrain",
         048,
         [:BHD],
@@ -2533,6 +2744,7 @@ const _country_data = Dict(
     ),
     :LS => (
         Country{:LS},
+        "LSO",
         "Lesotho",
         426,
         [:LSL, :ZAR],
@@ -2545,6 +2757,7 @@ const _country_data = Dict(
     ),
     :PW => (
         Country{:PW},
+        "PLW",
         "Palau",
         585,
         [:USD],
@@ -2557,6 +2770,7 @@ const _country_data = Dict(
     ),
     :AF => (
         Country{:AF},
+        "AFG",
         "Afghanistan",
         004,
         [:AFN],
@@ -2569,6 +2783,7 @@ const _country_data = Dict(
     ),
     :NA => (
         Country{:NA},
+        "NAM",
         "Namibia",
         516,
         [:NAD, :ZAR],
@@ -2581,6 +2796,7 @@ const _country_data = Dict(
     ),
     :CX => (
         Country{:CX},
+        "CXR",
         "Christmas Island",
         162,
         [:AUD],
@@ -2593,6 +2809,7 @@ const _country_data = Dict(
     ),
     :LY => (
         Country{:LY},
+        "LBY",
         "Libya",
         434,
         [:LYD],
@@ -2605,6 +2822,7 @@ const _country_data = Dict(
     ),
     :SB => (
         Country{:SB},
+        "SLB",
         "Solomon Islands",
         090,
         [:SBD],
@@ -2617,6 +2835,7 @@ const _country_data = Dict(
     ),
     :PT => (
         Country{:PT},
+        "PRT",
         "Portugal",
         620,
         [:EUR],
@@ -2629,6 +2848,7 @@ const _country_data = Dict(
     ),
     :ZM => (
         Country{:ZM},
+        "ZMB",
         "Zambia",
         894,
         [:ZMW],
@@ -2641,6 +2861,7 @@ const _country_data = Dict(
     ),
     :KY => (
         Country{:KY},
+        "CYM",
         "Cayman Islands",
         136,
         [:KYD],
@@ -2653,6 +2874,7 @@ const _country_data = Dict(
     ),
     :TL => (
         Country{:TL},
+        "TLS",
         "Timor-Leste",
         626,
         [:USD],
@@ -2665,6 +2887,7 @@ const _country_data = Dict(
     ),
     :CR => (
         Country{:CR},
+        "CRI",
         "Costa Rica",
         188,
         [:CRC],
@@ -2677,6 +2900,7 @@ const _country_data = Dict(
     ),
     :PY => (
         Country{:PY},
+        "PRY",
         "Paraguay",
         600,
         [:PYG],
@@ -2689,6 +2913,7 @@ const _country_data = Dict(
     ),
     :RW => (
         Country{:RW},
+        "RWA",
         "Rwanda",
         646,
         [:RWF],
@@ -2701,6 +2926,7 @@ const _country_data = Dict(
     ),
     :AR => (
         Country{:AR},
+        "ARG",
         "Argentina",
         032,
         [:ARS],
@@ -2713,6 +2939,7 @@ const _country_data = Dict(
     ),
     :GL => (
         Country{:GL},
+        "GRL",
         "Greenland",
         304,
         [:DKK],
@@ -2725,6 +2952,7 @@ const _country_data = Dict(
     ),
     :AZ => (
         Country{:AZ},
+        "AZE",
         "Azerbaijan",
         031,
         [:AZN],
@@ -2737,6 +2965,7 @@ const _country_data = Dict(
     ),
     :KM => (
         Country{:KM},
+        "COM",
         "Comoros",
         174,
         [:KMF],
@@ -2749,6 +2978,7 @@ const _country_data = Dict(
     ),
     :VC => (
         Country{:VC},
+        "VCT",
         "Saint Vincent and the Grenadines",
         670,
         [:XCD],
@@ -2761,6 +2991,7 @@ const _country_data = Dict(
     ),
     :BR => (
         Country{:BR},
+        "BRA",
         "Brazil",
         076,
         [:BRL],
@@ -2773,6 +3004,7 @@ const _country_data = Dict(
     ),
     :RE => (
         Country{:RE},
+        "REU",
         "Réunion",
         638,
         [:EUR],
@@ -2785,6 +3017,7 @@ const _country_data = Dict(
     ),
     :MK => (
         Country{:MK},
+        "MKD",
         "The former Yugoslav Republic of Macedonia",
         807,
         [:MKD],
@@ -2797,6 +3030,7 @@ const _country_data = Dict(
     ),
     :MU => (
         Country{:MU},
+        "MUS",
         "Mauritius",
         480,
         [:MUR],
@@ -2809,6 +3043,7 @@ const _country_data = Dict(
     ),
     :SG => (
         Country{:SG},
+        "SGP",
         "Singapore",
         702,
         [:SGD],
@@ -2821,6 +3056,7 @@ const _country_data = Dict(
     ),
     :MP => (
         Country{:MP},
+        "MNP",
         "Northern Mariana Islands",
         580,
         [:USD],
@@ -2833,6 +3069,7 @@ const _country_data = Dict(
     ),
     :AL => (
         Country{:AL},
+        "ALB",
         "Albania",
         008,
         [:ALL],
@@ -2845,6 +3082,7 @@ const _country_data = Dict(
     ),
     :UZ => (
         Country{:UZ},
+        "UZB",
         "Uzbekistan",
         860,
         [:UZS],
@@ -2857,6 +3095,7 @@ const _country_data = Dict(
     ),
     :PM => (
         Country{:PM},
+        "SPM",
         "Saint Pierre and Miquelon",
         666,
         [:EUR],
@@ -2869,6 +3108,7 @@ const _country_data = Dict(
     ),
     :AX => (
         Country{:AX},
+        "ALA",
         "Åland Islands",
         248,
         [:EUR],
@@ -2881,6 +3121,7 @@ const _country_data = Dict(
     ),
     :JM => (
         Country{:JM},
+        "JAM",
         "Jamaica",
         388,
         [:JMD],
@@ -2893,6 +3134,7 @@ const _country_data = Dict(
     ),
     :CY => (
         Country{:CY},
+        "CYP",
         "Cyprus",
         196,
         [:EUR],
@@ -2905,6 +3147,7 @@ const _country_data = Dict(
     ),
     :GI => (
         Country{:GI},
+        "GIB",
         "Gibraltar",
         292,
         [:GIP],
@@ -2917,6 +3160,7 @@ const _country_data = Dict(
     ),
     :GS => (
         Country{:GS},
+        "SGS",
         "South Georgia and the South Sandwich Islands",
         239,
         Symbol[],
@@ -2929,6 +3173,7 @@ const _country_data = Dict(
     ),
     :TN => (
         Country{:TN},
+        "TUN",
         "Tunisia",
         788,
         [:TND],
@@ -2941,6 +3186,7 @@ const _country_data = Dict(
     ),
     :DM => (
         Country{:DM},
+        "DMA",
         "Dominica",
         212,
         [:XCD],
@@ -2953,6 +3199,7 @@ const _country_data = Dict(
     ),
     :BW => (
         Country{:BW},
+        "BWA",
         "Botswana",
         072,
         [:BWP],
@@ -2965,6 +3212,7 @@ const _country_data = Dict(
     ),
     :NI => (
         Country{:NI},
+        "NIC",
         "Nicaragua",
         558,
         [:NIO],
