@@ -1,4 +1,5 @@
 using PortfolioAnalysis
+using Dates
 using Test
 
 @testset "PortfolioAnalysis.jl" begin
@@ -139,6 +140,64 @@ using Test
                 @test industrynum(security) == g ÷ 100
                 @test industrygroupnum(security) == g ÷ 10000
                 @test sectornum(security) == g ÷ 1000000
+            end
+        end
+    end
+
+    @testset "Positions.jl" begin
+        @testset "Basic Positions" begin
+            include(joinpath(@__DIR__, "dummy-data.jl"))
+
+            function calculate_returns(ps::Vector{Float64})::Vector{Float64}
+                rs::Vector{Float64} = []
+                p0::Float64 = ps[1]
+                r::Float64 = 0
+                for p in ps[2:end]
+                    r = p / p0 - 1
+                    push!(rs, r)
+                    p0 = p
+                end
+                return rs
+            end
+
+            calculate_return(ps::Vector{Float64})::Float64 =
+                exp(sum(log.(1 .+ calculate_returns(ps)))) - 1
+
+            n = 100
+            secs::Vector{AbstractSecurity} = randomequities(n)
+            qs::TimeArray{Float64,2,Date} = randomholdings(n)
+            ps::TimeArray{Float64,2,Date} = randomprices(n)
+            incs::TimeArray{Float64,2,Date} = randomincome(n)
+            splits::TimeArray{Float64,2,Date} = randomsplits(n)
+            for sec in secs
+                name = sec |> securityname |> Symbol
+                q = rename(qs[name], :shares)
+                p = rename(ps[name], :price)
+                inc = rename(incs[name], :income)
+                split = rename(splits[name], :split)
+                pos = Position(sec, q, p, inc, split)
+                sdate = Date(2021,2,1)
+                edate = Date(2021,2,28)
+                sl = sdate:Day(1):edate
+
+                @test security(pos) == sec
+                @test shares(pos) == q
+                @test shares(pos, sdate, edate) == q[sl]
+                @test marketdata(pos) == merge(p, inc, split)
+                @test marketdata(pos, sdate, edate) == merge(p, inc, split)[sl]
+                @test prices(pos) == p
+                @test prices(pos, sdate, edate) == p[sl]
+                @test income(pos) == inc
+                @test income(pos, sdate, edate) == inc[sl]
+                @test values(marketvalues(pos)) == [x[2] * y[2] for (x, y) in zip(q, p)]
+                @test values(marketvalues(pos, sdate, edate)) == [x[2] * y[2] for (x, y) in zip(q[sl], p[sl])]
+                @test values(returns(pos)) ≈ calculate_returns(values(p))
+                @test values(returns(pos, sdate, edate)) ≈ calculate_returns(values(p[sl]))
+                @test values(logreturns(pos)) ≈ log.(1 .+ calculate_returns(values(p)))
+                @test values(logreturns(pos, sdate, edate)) ≈ log.(1 .+ calculate_returns(values(p[sl])))
+                @test totalreturn(pos) ≈ calculate_return(values(p))
+                @test totalreturn(pos, sdate, edate) ≈ calculate_return(values(p[sl]))
+
             end
         end
     end

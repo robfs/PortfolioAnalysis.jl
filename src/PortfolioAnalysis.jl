@@ -9,6 +9,9 @@ using .Countries
 include("Securities.jl")
 using .Securities
 
+include("Positions.jl")
+using .Positions
+
 export Currency, currency, currencyiso, currencyunit, currencycode, currencyname
 
 export Country, countryiso2, country, @country
@@ -24,6 +27,7 @@ export countryiso3,
     subregion
 
 export AbstractSecurity,
+    PhysicalSecurity,
     CashSecurity,
     CommonEquitySecurity,
     securityid,
@@ -35,5 +39,16 @@ export AbstractSecurity,
     industrygroupnum,
     sectornum
 
+export Position,
+    security,
+    shares,
+    marketdata,
+    prices,
+    income,
+    marketvalues,
+    returns,
+    logreturns,
+    totalreturn
 
-end
+
+end # module PortfolioAnalysis

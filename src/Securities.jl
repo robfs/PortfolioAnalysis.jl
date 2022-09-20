@@ -8,6 +8,7 @@ module Securities
 using ..Countries, ..Currencies
 
 export AbstractSecurity,
+    PhysicalSecurity,
     CashSecurity,
     CommonEquitySecurity,
     securityid,
@@ -41,26 +42,6 @@ Returns the currency of a security
 """
 securitycurrency(s::AbstractSecurity)::Type{Currency{S}} where {S} = s.currency
 
-"""
-Returns the GICS subindustry number of a security
-"""
-subindustrynum(s::AbstractSecurity)::Int = s.gicsnum
-
-"""
-Returns the GICS industry number of a security
-"""
-industrynum(s::AbstractSecurity)::Int = subindustrynum(s) ÷ 100
-
-"""
-Returns the GICS industry group number of a security
-"""
-industrygroupnum(s::AbstractSecurity)::Int = industrynum(s) ÷ 100
-
-"""
-Returns the GICS sector number of a security
-"""
-sectornum(s::AbstractSecurity)::Int = industrygroupnum(s) ÷ 100
-
 abstract type PhysicalSecurity <: AbstractSecurity end
 
 struct CommonEquitySecurity <: PhysicalSecurity
@@ -70,6 +51,26 @@ struct CommonEquitySecurity <: PhysicalSecurity
     currency::Type{Currency{T}} where {T}
     gicsnum::Int
 end
+
+"""
+Returns the GICS subindustry number of a security
+"""
+subindustrynum(s::CommonEquitySecurity)::Int = s.gicsnum
+
+"""
+Returns the GICS industry number of a security
+"""
+industrynum(s::CommonEquitySecurity)::Int = subindustrynum(s) ÷ 100
+
+"""
+Returns the GICS industry group number of a security
+"""
+industrygroupnum(s::CommonEquitySecurity)::Int = industrynum(s) ÷ 100
+
+"""
+Returns the GICS sector number of a security
+"""
+sectornum(s::CommonEquitySecurity)::Int = industrygroupnum(s) ÷ 100
 
 struct CashSecurity <: PhysicalSecurity
     currency::Type{Currency{T}} where {T}
