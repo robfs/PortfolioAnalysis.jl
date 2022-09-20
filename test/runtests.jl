@@ -176,8 +176,8 @@ using Test
                 inc = rename(incs[name], :income)
                 split = rename(splits[name], :split)
                 pos = Position(sec, q, p, inc, split)
-                sdate = Date(2021,2,1)
-                edate = Date(2021,2,28)
+                sdate = Date(2021, 2, 1)
+                edate = Date(2021, 2, 28)
                 sl = sdate:Day(1):edate
 
                 @test security(pos) == sec
@@ -190,11 +190,13 @@ using Test
                 @test income(pos) == inc
                 @test income(pos, sdate, edate) == inc[sl]
                 @test values(marketvalues(pos)) == [x[2] * y[2] for (x, y) in zip(q, p)]
-                @test values(marketvalues(pos, sdate, edate)) == [x[2] * y[2] for (x, y) in zip(q[sl], p[sl])]
+                @test values(marketvalues(pos, sdate, edate)) ==
+                      [x[2] * y[2] for (x, y) in zip(q[sl], p[sl])]
                 @test values(returns(pos)) ≈ calculate_returns(values(p))
                 @test values(returns(pos, sdate, edate)) ≈ calculate_returns(values(p[sl]))
                 @test values(logreturns(pos)) ≈ log.(1 .+ calculate_returns(values(p)))
-                @test values(logreturns(pos, sdate, edate)) ≈ log.(1 .+ calculate_returns(values(p[sl])))
+                @test values(logreturns(pos, sdate, edate)) ≈
+                      log.(1 .+ calculate_returns(values(p[sl])))
                 @test totalreturn(pos) ≈ calculate_return(values(p))
                 @test totalreturn(pos, sdate, edate) ≈ calculate_return(values(p[sl]))
 

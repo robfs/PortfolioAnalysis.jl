@@ -1,5 +1,7 @@
 module PortfolioAnalysis
 
+using Dates, TimeSeries
+
 include("Currencies.jl")
 using .Currencies
 
