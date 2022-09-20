@@ -5,7 +5,7 @@ This package provides the `Position` type and associated methods
 """
 module Positions
 
-using TimeSeries
+using ..Dates, ..TimeSeries
 using Dates
 
 using ..Securities
