@@ -18,11 +18,11 @@ calendars =
 const CAL = CompositeHolidayCalendar(calendars)
 
 # define all dates and select only business days
-dates::Vector{Date} = collect(SDATE:Day(1):EDATE)
+dates = collect(SDATE:Day(1):EDATE)
 const BDATES = dates[isbday(CAL, dates)]
 
 # define month ends for rebalancing holdings
-monthends::Vector{Date} = lastdayofmonth.(dates) |> unique
+monthends = lastdayofmonth.(dates) |> unique
 const REBALANCES = tobday(CAL, monthends; forward = false)
 
 # set number of dates to generate data for
