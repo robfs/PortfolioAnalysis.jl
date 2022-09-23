@@ -11,6 +11,7 @@ TimeSeries = "9e3dc215-6440-5c97-bce1-76c03772f85e"
 
 [compat]
 TimeSeries = "0.23"
+BusinessDays = "0.9"
 julia = "1.7"
 
 [extras]
